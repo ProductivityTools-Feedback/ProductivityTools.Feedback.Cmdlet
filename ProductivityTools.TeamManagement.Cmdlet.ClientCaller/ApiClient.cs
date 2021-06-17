@@ -13,6 +13,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         {
             this.Client = new HttpPostClient(true);
             this.Client.SetBaseUrl("https://localhost:44386");
+            this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.tech:8030");
         }
 
         public List<PersonFeedback> GetFeedback(List<string> initials)
