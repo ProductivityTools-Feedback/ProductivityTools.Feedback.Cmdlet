@@ -94,7 +94,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         {
             this.Client = new HttpPostClient(true);
             this.Client.SetBaseUrl("https://localhost:44386");
-            this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.tech:8030");
+            //this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.tech:8030");
             this.Client.HttpClient.SetBearerToken(Token);
         }
 
@@ -118,6 +118,11 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         public void SaveInternalInformation(List<string> initials, string value)
         {
             var r = this.Client.PostAsync<object>("Internal", "SaveInternalInformation", new SaveInternalInformation { Initials = initials, Value = value }).Result;
+        }
+
+        public void AddPerson(string firstName, string lastName, string initials, string category)
+        {
+            var r = this.Client.PostAsync<object>("Person","Add",new { FirstName= firstName, LastName= lastName, Initials=initials, Category=category} );
         }
     }
 }
