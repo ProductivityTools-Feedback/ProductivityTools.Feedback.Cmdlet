@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ProductivityTools.TeamManagement.Cmdlet.Person
 {
-    [Cmdlet(VerbsCommon.Get, "AddPersonFeedback")]
+    [Cmdlet(VerbsCommon.Add, "PersonFeedback")]
     [Description("Add-PersonFeedback adds person to the feedback database")]
     public class AddPerson : PSCmdletPT
     {

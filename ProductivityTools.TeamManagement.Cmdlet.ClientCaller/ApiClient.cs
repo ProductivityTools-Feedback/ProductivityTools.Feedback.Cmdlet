@@ -2,12 +2,14 @@
 using Microsoft.Extensions.Configuration;
 using ProductivityTools.MasterConfiguration;
 using ProductivityTools.SimpleHttpPostClient;
+using ProductivityTools.TeamManagement.Contract;
 using ProductivityTools.TeamManagement.Contract.Feedback;
 using ProductivityTools.TeamManagement.Contract.Internal;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
 {
@@ -94,7 +96,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         {
             this.Client = new HttpPostClient(true);
             this.Client.SetBaseUrl("https://localhost:44386");
-            //this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.tech:8030");
+            this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.tech:8030");
             this.Client.HttpClient.SetBearerToken(Token);
         }
 
@@ -122,7 +124,13 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
 
         public void AddPerson(string firstName, string lastName, string initials, string category)
         {
-            var r = this.Client.PostAsync<object>("Person","Add",new { FirstName= firstName, LastName= lastName, Initials=initials, Category=category} );
+            var r = this.Client.PostAsync<object>("Person", "Add", new { FirstName = firstName, LastName = lastName, Initials = initials, Category = category });
+        }
+
+        public async Task<List<Person>> GetPeopleList()
+        {
+            var r =  await this.Client.PostAsync<List<Person>>("Person", "GetList", new object());
+            return r;
         }
     }
 }
