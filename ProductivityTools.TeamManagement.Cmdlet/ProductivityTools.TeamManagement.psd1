@@ -12,7 +12,7 @@
 RootModule = 'ProductivityTools.TeamManagement.Cmdlet.dll'
 
 # Version number of this module.
-ModuleVersion = '0.0.6'
+ModuleVersion = '0.0.8'
 
 # ID used to uniquely identify this module
 GUID = '0b614158-0823-4edb-ad35-a4b6e2e6449b'
@@ -24,7 +24,7 @@ Author = 'Pawel wujczyk'
 Description = 'It is a cmdlet which allows to save quick feedbacks about the team'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @('Get-Feedback','Set-Feedback')
+CmdletsToExport = @('Get-Feedback','Set-Feedback','Add-PersonFeedback','Get-PeopleList')
 
 # List of all files packaged with this module
 FileList=@(
