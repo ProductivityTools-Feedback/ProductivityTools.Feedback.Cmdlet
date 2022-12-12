@@ -60,7 +60,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
             Console.WriteLine("token is empty need to call identity server");
             var client = new HttpClient();
 
-            var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.tech:8010/").Result;
+            var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.top:8010/").Result;
             Console.WriteLine($"Discovery server{disco}");
             if (disco.IsError)
             {
@@ -96,7 +96,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         {
             this.Client = new HttpPostClient(true);
             this.Client.SetBaseUrl("https://localhost:44386");
-            this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.tech:8030");
+            this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.top:8030");
             this.Client.HttpClient.SetBearerToken(Token);
         }
 
