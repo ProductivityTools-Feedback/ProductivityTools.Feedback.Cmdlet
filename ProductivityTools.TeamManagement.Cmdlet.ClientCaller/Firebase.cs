@@ -19,7 +19,15 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
             this.Url = url;
         }
 
-        async Task<string> GetIdToken(string custom_token)
+
+        public async Task<string> GetIdToken()
+        {
+            var customToken=await this.GetCustomToken();
+            var idToken = await this.GetIdToken(customToken);
+            return idToken;
+        }
+
+        private async Task<string> GetIdToken(string custom_token)
         {
             var HttpClient = new HttpClient();
             Uri url = new Uri($"https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key={this.WebApiKey}");

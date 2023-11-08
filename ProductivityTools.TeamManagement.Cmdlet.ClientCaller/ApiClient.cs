@@ -41,20 +41,29 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
             }
         }
 
+        private static IConfiguration Configuration
+        {
+            get
+            {
+                IConfigurationRoot configuration = null;
+                try
+                {
+                    configuration = new ConfigurationBuilder().AddMasterConfiguration().Build();
+                    return configuration;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+
+            }
+        }
+
         private static void SetNewAccessToken()
         {
-            IConfigurationRoot configuration = null;
-            try
-            {
-                configuration = new ConfigurationBuilder().AddMasterConfiguration().Build();
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-
+          
 
 
             Console.WriteLine("token is empty need to call identity server");
@@ -68,7 +77,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
             }
 
             Console.WriteLine("GetTask3Cmdlet secret");
-            Console.WriteLine(configuration["GetTask3Cmdlet"]);
+            Console.WriteLine(Configuration["GetTask3Cmdlet"]);
 
             var tokenResponse = client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
@@ -98,6 +107,14 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
             this.Client.SetBaseUrl("https://localhost:44386");
             this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.top:8030");
             this.Client.HttpClient.SetBearerToken(Token);
+
+            if (true)
+            {
+                var webApiKey = Configuration["webApiKey"];
+                var url= Configuration["url"];
+                Firebase firebase = new Firebase(webApiKey,url);
+                var token=firebase.GetIdToken();
+            }
         }
 
         public List<PersonFeedback> GetFeedback(List<string> initials)
