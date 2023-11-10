@@ -63,7 +63,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         private async Task<string> GetCustomToken()
         {
             var HttpClient = new HttpClient();
-            Uri url = new Uri($"{this.Url}CustomToken/Get?user={this.User}&password={this.Password}");
+            Uri url = new Uri($"{this.Url}/CustomToken/Get?user={this.User}&password={this.Password}");
 
             HttpClient.DefaultRequestHeaders.Accept.Clear();
             HttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

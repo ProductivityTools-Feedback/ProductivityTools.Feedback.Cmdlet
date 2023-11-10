@@ -115,7 +115,8 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
                 var password = Configuration["password"];
                
                 Firebase firebase = new Firebase(webApiKey, url, password);
-                var token = firebase.GetIdToken();
+                var token = firebase.GetIdToken().Result;
+                this.Client.HttpClient.SetBearerToken(token);
             }
         }
 
