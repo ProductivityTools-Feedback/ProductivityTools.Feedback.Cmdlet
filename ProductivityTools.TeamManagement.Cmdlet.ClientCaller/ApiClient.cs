@@ -63,7 +63,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
 
         private static void SetNewAccessToken()
         {
-          
+
 
 
             Console.WriteLine("token is empty need to call identity server");
@@ -103,17 +103,19 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
 
         public ApiClient()
         {
+            var url = Configuration["url"];
             this.Client = new HttpPostClient(true);
-            this.Client.SetBaseUrl("https://localhost:44386");
-            this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.top:8030");
+            this.Client.SetBaseUrl(url);
+           // this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.top:8030");
             this.Client.HttpClient.SetBearerToken(Token);
 
             if (true)
             {
                 var webApiKey = Configuration["webApiKey"];
-                var url= Configuration["url"];
-                Firebase firebase = new Firebase(webApiKey,url);
-                var token=firebase.GetIdToken();
+                var password = Configuration["password"];
+               
+                Firebase firebase = new Firebase(webApiKey, url, password);
+                var token = firebase.GetIdToken();
             }
         }
 
@@ -146,7 +148,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
 
         public async Task<List<Person>> GetPeopleList()
         {
-            var r =  await this.Client.PostAsync<List<Person>>("Person", "GetList", new object());
+            var r = await this.Client.PostAsync<List<Person>>("Person", "GetList", new object());
             return r;
         }
     }

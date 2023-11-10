@@ -12,17 +12,20 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
     {
         public string WebApiKey { get; set; }
         public string Url { get; set; }
+        public string Password { get; set; }
+        private string User { get { return "cmdlet"; } }
 
-        public Firebase(string webApiKey, string url)
+        public Firebase(string webApiKey, string url, string password)
         {
             this.WebApiKey = webApiKey;
             this.Url = url;
+            this.Password = password;
         }
 
 
         public async Task<string> GetIdToken()
         {
-            var customToken=await this.GetCustomToken();
+            var customToken = await this.GetCustomToken();
             var idToken = await this.GetIdToken(customToken);
             return idToken;
         }
@@ -60,7 +63,7 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
         private async Task<string> GetCustomToken()
         {
             var HttpClient = new HttpClient();
-            Uri url = new Uri($"{this.Url}CustomToken/Get");
+            Uri url = new Uri($"{this.Url}CustomToken/Get?user={this.User}&password={this.Password}");
 
             HttpClient.DefaultRequestHeaders.Accept.Clear();
             HttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
