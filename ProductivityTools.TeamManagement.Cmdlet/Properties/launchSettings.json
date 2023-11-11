@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "ProductivityTools.TeamManagement.Cmdlet": {
-	  "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "commandLineArgs": "-noexit -command \"import-module d:\\GitHub\\ProductivityTools.TeamManagement.Cmdlet\\ProductivityTools.TeamManagement.Cmdlet\\bin\\Debug\\netstandard2.0\\ProductivityTools.TeamManagement.Cmdlet.dll"
-    }
-  }
-}

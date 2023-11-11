@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProductivityTools.TeamManagement.Cmdlet.Person
+namespace ProductivityTools.Feedback.Cmdlet.Person
 {
  public class GetList : TeamManagmentCmdletBase<ListPeople>
     {

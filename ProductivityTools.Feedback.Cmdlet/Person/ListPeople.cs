@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Management.Automation;
 using System.Text;
 
-namespace ProductivityTools.TeamManagement.Cmdlet.Person
+namespace ProductivityTools.Feedback.Cmdlet.Person
 {
     [Cmdlet(VerbsCommon.Get, "PeopleList")]
     [Description("Add-PersonFeedback adds person to the feedback database")]

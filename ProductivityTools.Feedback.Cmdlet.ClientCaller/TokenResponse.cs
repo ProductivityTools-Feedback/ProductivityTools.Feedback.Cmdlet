@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
+namespace ProductivityTools.Feedback.Cmdlet.ClientCaller
 {
     public class TokenResponse
     {

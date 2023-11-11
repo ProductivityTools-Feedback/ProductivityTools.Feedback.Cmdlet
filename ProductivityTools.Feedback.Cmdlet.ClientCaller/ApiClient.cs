@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using ProductivityTools.MasterConfiguration;
 using ProductivityTools.SimpleHttpPostClient;
-using ProductivityTools.TeamManagement.Contract;
-using ProductivityTools.TeamManagement.Contract.Feedback;
-using ProductivityTools.TeamManagement.Contract.Internal;
+using ProductivityTools.Feedback.Contract;
+using ProductivityTools.Feedback.Contract.Feedback;
+using ProductivityTools.Feedback.Contract.Internal;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -12,7 +12,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using static IdentityModel.OidcConstants;
 
-namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
+namespace ProductivityTools.Feedback.Cmdlet.ClientCaller
 {
     public class ApiClient
     {

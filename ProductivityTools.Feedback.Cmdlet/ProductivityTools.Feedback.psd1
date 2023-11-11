@@ -9,7 +9,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'ProductivityTools.TeamManagement.Cmdlet.dll'
+RootModule = 'ProductivityTools.Feedback.Cmdlet.dll'
 
 # Version number of this module.
 ModuleVersion = '0.0.13'
@@ -32,13 +32,13 @@ FileList=@(
 'ProductivityTools.DescriptionValue.dll',
 'ProductivityTools.PSCmdlet.dll',
 'ProductivityTools.SimpleHttpPostClient.dll',
-'ProductivityTools.TeamManagement.Cmdlet.ClientCaller.dll',
-'ProductivityTools.TeamManagement.Cmdlet.ClientCaller.pdb',
-'ProductivityTools.TeamManagement.Cmdlet.deps.json',
-'ProductivityTools.TeamManagement.Cmdlet.dll',
-'ProductivityTools.TeamManagement.Cmdlet.pdb',
-'ProductivityTools.TeamManagement.Contract.dll',
-'ProductivityTools.TeamManagement.psd1',
+'ProductivityTools.Feedback.Cmdlet.ClientCaller.dll',
+'ProductivityTools.Feedback.Cmdlet.ClientCaller.pdb',
+'ProductivityTools.Feedback.Cmdlet.deps.json',
+'ProductivityTools.Feedback.Cmdlet.dll',
+'ProductivityTools.Feedback.Cmdlet.pdb',
+'ProductivityTools.Feedback.Contract.dll',
+'ProductivityTools.Feedback.psd1',
 'System.Management.Automation.dll'
 )
 

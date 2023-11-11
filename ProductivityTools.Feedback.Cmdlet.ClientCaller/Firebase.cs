@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
+namespace ProductivityTools.Feedback.Cmdlet.ClientCaller
 {
     internal class Firebase
     {
