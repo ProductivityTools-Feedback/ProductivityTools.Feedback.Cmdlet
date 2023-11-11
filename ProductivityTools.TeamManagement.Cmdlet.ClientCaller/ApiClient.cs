@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static IdentityModel.OidcConstants;
 
 namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
 {
@@ -117,6 +118,8 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
                 Firebase firebase = new Firebase(webApiKey, url, password);
                 var token = firebase.GetIdToken().Result;
                 this.Client.HttpClient.SetBearerToken(token);
+                Console.WriteLine("new token");
+                Console.WriteLine(token);
             }
         }
 

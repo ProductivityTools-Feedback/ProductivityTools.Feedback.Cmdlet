@@ -12,7 +12,7 @@
 RootModule = 'ProductivityTools.TeamManagement.Cmdlet.dll'
 
 # Version number of this module.
-ModuleVersion = '0.0.10'
+ModuleVersion = '0.0.13'
 
 # ID used to uniquely identify this module
 GUID = '0b614158-0823-4edb-ad35-a4b6e2e6449b'
