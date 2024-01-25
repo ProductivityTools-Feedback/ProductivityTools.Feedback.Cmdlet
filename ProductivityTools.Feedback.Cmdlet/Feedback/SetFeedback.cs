@@ -1,6 +1,6 @@
 ﻿using ProductivityTools.PSCmdlet;
 using PSTeamManagement.Cmdlet;
-using PSTeamManagment.Cmdlet.Feedback.Commands;
+using Feedback.Cmdlet.Feedback.Commands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagment.Cmdlet.Feedback
+namespace Feedback.Cmdlet.Feedback
 {
     [Cmdlet(VerbsCommon.Set, "Feedback")]
     [Description("Set-Feedback saves feedback for chosen people")]

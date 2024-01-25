@@ -1,6 +1,6 @@
 ﻿using ProductivityTools.PSCmdlet;
 using PSTeamManagement.Cmdlet;
-using PSTeamManagment.Cmdlet.Feedback.Commands;
+using Feedback.Cmdlet.Feedback.Commands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
+namespace Feedback.Cmdlet.InternalInformation.Commands
 {
     [Cmdlet(VerbsCommon.Get, "Internal")]
     [Description("Get-Internal returns internal (which shouldn't be shared) information about chosen people")]

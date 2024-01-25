@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagment.Cmdlet
+namespace Feedback.Cmdlet
 {
     public interface ICmdletInitials
     {

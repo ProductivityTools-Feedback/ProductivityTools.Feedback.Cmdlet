@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagment.Cmdlet
+namespace Feedback.Cmdlet
 {
     public abstract class TeamManagmentCmdletBase<Type> : PSCommandPT<Type> where Type : PSCmdletPT
     {

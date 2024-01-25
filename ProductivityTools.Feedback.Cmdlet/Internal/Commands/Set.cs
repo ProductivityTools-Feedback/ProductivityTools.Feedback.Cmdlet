@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
+namespace Feedback.Cmdlet.InternalInformation.Commands
 {
     public class Set : TeamManagmentCmdletBase<SetInternal>
     {

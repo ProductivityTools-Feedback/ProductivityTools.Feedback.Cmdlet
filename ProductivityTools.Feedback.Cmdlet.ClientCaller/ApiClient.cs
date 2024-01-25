@@ -20,27 +20,27 @@ namespace ProductivityTools.Feedback.Cmdlet.ClientCaller
 
         private static string token;
 
-        private static string Token
-        {
-            get
-            {
-                Console.WriteLine("GetToken");
-                if (string.IsNullOrEmpty(token))
-                {
-                    SetNewAccessToken();
-                }
-                else
-                {
-                    var tokenhanlder = new JwtSecurityTokenHandler();
-                    var jwtSecurityToke = tokenhanlder.ReadJwtToken(token);
-                    if (jwtSecurityToke.ValidTo < DateTime.UtcNow)
-                    {
-                        SetNewAccessToken();
-                    }
-                }
-                return token;
-            }
-        }
+        //private static string Token
+        //{
+        //    get
+        //    {
+        //        Console.WriteLine("GetToken");
+        //        if (string.IsNullOrEmpty(token))
+        //        {
+        //            SetNewAccessToken();
+        //        }
+        //        else
+        //        {
+        //            var tokenhanlder = new JwtSecurityTokenHandler();
+        //            var jwtSecurityToke = tokenhanlder.ReadJwtToken(token);
+        //            if (jwtSecurityToke.ValidTo < DateTime.UtcNow)
+        //            {
+        //                SetNewAccessToken();
+        //            }
+        //        }
+        //        return token;
+        //    }
+        //}
 
         private static IConfiguration Configuration
         {
@@ -62,45 +62,45 @@ namespace ProductivityTools.Feedback.Cmdlet.ClientCaller
             }
         }
 
-        private static void SetNewAccessToken()
-        {
+        //private static void SetNewAccessToken()
+        //{
 
 
 
-            Console.WriteLine("token is empty need to call identity server");
-            var client = new HttpClient();
+        //    Console.WriteLine("token is empty need to call identity server");
+        //    var client = new HttpClient();
 
-            var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.top:8010/").Result;
-            Console.WriteLine($"Discovery server{disco}");
-            if (disco.IsError)
-            {
-                Console.WriteLine(disco.Error);
-            }
+        //    var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.top:8010/").Result;
+        //    Console.WriteLine($"Discovery server{disco}");
+        //    if (disco.IsError)
+        //    {
+        //        Console.WriteLine(disco.Error);
+        //    }
 
-            Console.WriteLine("GetTask3Cmdlet secret");
-            Console.WriteLine(Configuration["GetTask3Cmdlet"]);
+        //    Console.WriteLine("GetTask3Cmdlet secret");
+        //    Console.WriteLine(Configuration["GetTask3Cmdlet"]);
 
-            var tokenResponse = client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
-            {
-                Address = disco.TokenEndpoint,
+        //    var tokenResponse = client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+        //    {
+        //        Address = disco.TokenEndpoint,
 
-                ClientId = "TMCmdlet",
-                ClientSecret = "pass1",// configuration["GetTask3Cmdlet"],
-                Scope = "TM.API"
-            }).Result;
+        //        ClientId = "TMCmdlet",
+        //        ClientSecret = "pass1",// configuration["GetTask3Cmdlet"],
+        //        Scope = "TM.API"
+        //    }).Result;
 
-            Console.WriteLine("Token response pw:");
-            Console.WriteLine(tokenResponse.AccessToken);
-            Console.WriteLine(tokenResponse.Error);
+        //    Console.WriteLine("Token response pw:");
+        //    Console.WriteLine(tokenResponse.AccessToken);
+        //    Console.WriteLine(tokenResponse.Error);
 
-            if (tokenResponse.IsError)
-            {
-                Console.WriteLine(tokenResponse.Error);
-            }
+        //    if (tokenResponse.IsError)
+        //    {
+        //        Console.WriteLine(tokenResponse.Error);
+        //    }
 
-            Console.WriteLine(tokenResponse.Json);
-            token = tokenResponse.AccessToken;
-        }
+        //    Console.WriteLine(tokenResponse.Json);
+        //    token = tokenResponse.AccessToken;
+        //}
 
         public ApiClient()
         {
@@ -108,7 +108,7 @@ namespace ProductivityTools.Feedback.Cmdlet.ClientCaller
             this.Client = new HttpPostClient(true);
             this.Client.SetBaseUrl(url);
            // this.Client.SetBaseUrl("https://ApiTeamManagement.productivitytools.top:8030");
-            this.Client.HttpClient.SetBearerToken(Token);
+           // this.Client.HttpClient.SetBearerToken(Token);
 
             if (true)
             {

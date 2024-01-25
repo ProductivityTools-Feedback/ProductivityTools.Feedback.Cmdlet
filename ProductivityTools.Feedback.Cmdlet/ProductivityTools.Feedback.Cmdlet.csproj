@@ -26,7 +26,7 @@
     </PackageReference>
     <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.6">
     </PackageReference>
-    <PackageReference Include="ProductivityTools.Feedback.Contract" Version="0.0.5">
+    <PackageReference Include="ProductivityTools.Feedback.Contract" Version="0.0.8">
     </PackageReference>
   </ItemGroup>
 

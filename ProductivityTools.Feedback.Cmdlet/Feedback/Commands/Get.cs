@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagment.Cmdlet.Feedback.Commands
+namespace Feedback.Cmdlet.Feedback.Commands
 {
     public class Get : TeamManagmentCmdletBase<GetFeedback>
     {
